@@ -229,6 +229,30 @@ class ReframeSettings:
                 }
             },
 
+            'ault': {
+                'descr': 'Ault',
+                'hostnames': ['ault'],
+                'modules_system': 'lmod',
+                'partitions': {
+                    'login': {
+                        'scheduler': 'local',
+                        'modules': [],
+                        'access': [],
+                        'environs': ['builtin-gcc'],
+                        'descr': 'Login nodes',
+                        'max_jobs': 4
+                    },
+
+                    'amdvega': {
+                        'scheduler': 'nativeslurm',
+                        'modules': [],
+                        'access': ['--partition=amdvega'],
+                        'environs': ['builtin-gcc'],
+                        'max_jobs': 100,
+                    }
+                }
+            },
+
             'generic': {
                 'descr': 'Generic example system',
                 'partitions': {
